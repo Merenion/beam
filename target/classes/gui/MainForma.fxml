@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane fx:id="forma" prefHeight="398.0" prefWidth="739.3499450683594" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="ru.vl.beam.mainFormaWindow.controllers.ContrMain">
+  <children>
+    <Label layoutX="19.0" layoutY="256.0" text="Дистанция:" wrapText="false" />
+    <TextField fx:id="textDistForceMoment" layoutX="91.0" layoutY="253.0" prefWidth="62.0" />
+    <Label layoutX="25.0" layoutY="285.0" text="Величина:" />
+    <TextField id="valum" fx:id="textValumForceMoment" layoutX="91.0" layoutY="282.0" prefWidth="62.0" />
+    <Label layoutX="25.0" layoutY="226.0" text="Силы и моменты:">
+      <font>
+        <Font name="System Bold" size="14.0" fx:id="x1" />
+      </font>
+    </Label>
+    <Label font="$x1" layoutX="222.0" layoutY="226.0" text="Опоры:" />
+    <TextField fx:id="textSupport" layoutX="259.0" layoutY="253.0" prefWidth="52.0" />
+    <RadioButton fx:id="radioSharnir" layoutX="185.0" layoutY="280.0" mnemonicParsing="false" selected="true" text="Шарнирная">
+      <toggleGroup>
+        <ToggleGroup fx:id="radioTypeSupport" />
+      </toggleGroup>
+    </RadioButton>
+    <RadioButton fx:id="radioNepodvithnaya" layoutX="185.0" layoutY="303.0" mnemonicParsing="false" text="Неподвижная" toggleGroup="$radioTypeSupport" />
+    <RadioButton id="radio" fx:id="radioZadelka" layoutX="185.0" layoutY="326.0" mnemonicParsing="false" text="Заделка" toggleGroup="$radioTypeSupport" />
+    <Button layoutX="206.0" layoutY="362.0" mnemonicParsing="false" onAction="#onAddSupport" prefWidth="84.0" text="Добавить" />
+    <Label layoutX="338.0" layoutY="256.0" text="От:" wrapText="false" />
+    <TextField fx:id="textLoadFrom" layoutX="360.0" layoutY="253.0" prefWidth="62.0" />
+    <Label layoutX="338.0" layoutY="284.0" text="До:" />
+    <Line endX="594.0" endY="0.0" layoutX="145.0" layoutY="216.0" startX="-143.0" startY="0.0" strokeWidth="2.7">
+      <stroke>
+        <Color blue="1.000" green="0.400" red="0.592" fx:id="x2" />
+      </stroke>
+    </Line>
+    <TextField fx:id="textTo" layoutX="361.0" layoutY="281.0" prefWidth="62.0" />
+    <Label layoutX="424.0" layoutY="250.0" text="- если возрастающая" />
+    <Label layoutX="435.0" layoutY="259.0" text="возрастать начнет" />
+    <Label layoutX="464.0" layoutY="268.0" text="отсюда" />
+    <RadioButton fx:id="radioVothrast" layoutX="373.0" layoutY="334.0" mnemonicParsing="false" text="Возрастает">
+      <toggleGroup>
+        <ToggleGroup fx:id="radioLoadVothrast" />
+      </toggleGroup>
+    </RadioButton>
+    <RadioButton fx:id="radioVothrastNo" layoutX="462.0" layoutY="334.0" mnemonicParsing="false" selected="true" text="Нет" toggleGroup="$radioLoadVothrast" />
+    <Button layoutX="48.0" layoutY="362.0" mnemonicParsing="false" onAction="#onAddMomentForce" prefWidth="76.99990000000253" text="Добавить" />
+    <Button layoutX="399.0" layoutY="362.0" mnemonicParsing="false" onAction="#onAddLoad" text="Добавить" />
+    <RadioButton id="radioMoment" fx:id="radioForce" layoutX="25.0" layoutY="315.0" mnemonicParsing="false" selected="true" text="Сила">
+      <toggleGroup>
+        <ToggleGroup fx:id="radioForceAndMoment" />
+      </toggleGroup>
+    </RadioButton>
+    <RadioButton fx:id="radioMoment" layoutX="84.0" layoutY="315.0" mnemonicParsing="false" selected="false" text="Момент" toggleGroup="$radioForceAndMoment" />
+    <TableView fx:id="tableElement" layoutX="563.0" layoutY="221.0" prefHeight="145.0" prefWidth="163.0">
+      <columns>
+        <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="80.0" text="Object" fx:id="columnObjectName" />
+        <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="85.0" text="Distance" fx:id="columnDistance" />
+      </columns>
+    </TableView>
+    <Line endX="11.0" endY="165.0" layoutX="155.0" layoutY="226.0" startX="11.0" startY="-9.0" stroke="$x2" strokeWidth="2.7" />
+    <Line endX="11.0" endY="165.0" layoutX="311.0" layoutY="226.0" startX="11.0" startY="-9.0" stroke="$x2" strokeWidth="2.7" />
+    <Label font="$x1" layoutX="355.0" layoutY="226.0" text="Распределеная нагрузка:" />
+    <Line endX="11.0" endY="165.0" layoutX="536.0" layoutY="226.0" startX="11.0" startY="-9.0" stroke="$x2" strokeWidth="2.7" />
+    <Button layoutX="613.0" layoutY="373.0" mnemonicParsing="false" onAction="#onDelete" text="Удалить" />
+    <Button layoutX="309.0" layoutY="184.0" mnemonicParsing="false" onAction="#onStart" prefWidth="122.0" text="Го" />
+    <Label layoutX="350.0" layoutY="310.0" text="Величина:" />
+    <TextField fx:id="textValumLoad" layoutX="410.0" layoutY="307.0" prefWidth="62.0" />
+    <Label layoutX="19.0" layoutY="187.0" text="Длина балки" wrapText="false" />
+    <TextField id="textDistForceMoment" fx:id="textLength" layoutX="92.0" layoutY="186.0" onKeyReleased="#onKeyText" prefWidth="62.0" text="10" />
+    <AnchorPane fx:id="formaBeam" layoutX="1.0" layoutY="-1.0" prefHeight="176.69998168945312" prefWidth="737.0">
+      <children>
+        <Line fx:id="mainLineBeam" endX="670.0" endY="130.0" layoutX="0.0" layoutY="0.0" startX="60.0" startY="130.0" stroke="#cc00ff" strokeWidth="5.2" />
+      </children>
+    </AnchorPane>
+    <Label layoutX="191.0" layoutY="256.0" text="Дистанция:" />
+  </children>
+</AnchorPane>
